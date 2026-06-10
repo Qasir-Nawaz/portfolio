@@ -48,7 +48,7 @@ body {
 /* Cyber Neon rotating ring - NORMAL DECENT SIZE */
 .logo-anime-box {
     position: relative;
-    width: 65px;         /* Normal professional size */
+    width: 65px;         
     height: 65px;
     border-radius: 50%;
     background: transparent;
@@ -74,21 +74,14 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* --- Perfect Circle Image Fit Fix --- */
+/* --- Perfect Circle Image Fit & Face Alignment Fix --- */
 .logo-img {
     width: 55px;         
     height: 55px;
     border-radius: 50%;
     object-fit: cover;   
-    
-    /* 🎯 ISKO BADLO: Pehle yeh 'center' tha, ab 'center 28%' karne se */
-    /* aapki pic halki si niche khisat jayegi aur baal poore nazar aayenge! */
-    object-position: center 30%; 
-    
-    /* 🎯 ISKO BHI APNI MARZI SE SET KRO: Agar chehra bohot bada lag raha hai, */
-    /* toh is scale ko 1 (normal) ya 1.1 kar do taaki pic thodi choti aur perfect ho jaye */
-    transform: scale(1.1);       
-    
+    object-position: center 28%; /* 🎯 HAIR CUT FIX: Baal katne se bachata hai aur face adjust karta hai */
+    transform: scale(1.1);       /* Perfectly balanced zoom inside ring */
     z-index: 1;
     border: 3px solid var(--bg-color); 
 }
@@ -154,7 +147,7 @@ body {
     font-size: 24px;
     color: var(--text-color);
     cursor: pointer;
-    display: none;
+    display: none; /* Desktop par hidden rahega */
 }
 
 /* --- Hero Section --- */
@@ -178,7 +171,7 @@ body {
     margin-bottom: 30px;
 }
 
-.hero-content h3 append span {
+.hero-content h3 span {
     color: var(--main-color);
 }
 
@@ -427,7 +420,7 @@ body {
     width: 48%;
 }
 
-/* --- 📱 RESPONSIVE MEDIA QUERIES 📱 --- */
+/* --- 📱 FINAL FIXED RESPONSIVE MEDIA QUERIES 📱 --- */
 
 @media (max-width: 991px) {
     .navbar {
@@ -446,15 +439,28 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 12px 5%;
+        padding: 10px 5%; /* Tight padding to keep everything on one line */
+        height: 80px;      
     }
+    
     .nav-links {
-        display: none;
+        display: none; /* Hide standard links on mobile */
     }
+    
+    /* 🎯 MOBILE HAMBURGER FIX: Shows the menu icon on standard mobile layouts */
+    .menu-btn {
+        display: block !important; 
+        font-size: 28px;
+        color: var(--text-color);
+        cursor: pointer;
+        z-index: 101;
+    }
+
     .hero-section {
         min-height: auto;
-        padding: 130px 5% 60px;
+        padding: 140px 5% 60px; 
     }
+
     .about-section {
         flex-direction: column-reverse;
         text-align: center;
@@ -462,61 +468,87 @@ body {
         min-height: auto;
         padding: 60px 5%;
     }
+
     .projects-section {
         min-height: auto;
         padding: 60px 5%;
     }
+
     .contact-section {
         min-height: auto !important;
         padding: 60px 5% 100px !important;
         display: block !important;
         clear: both;
     }
+
     .heading {
         text-align: center;
         font-size: 35px;
     }
+
     .hero-content h1 {
         font-size: 35px;
     }
+
     .hero-content h3 {
         font-size: 22px;
     }
+
     .about-img .img-box {
         width: 200px;
         height: 200px;
         font-size: 70px;
         margin: 0 auto;
     }
+
     .skills-badge {
         justify-content: center;
     }
+
     .contact-form {
         margin-top: 2rem;
     }
+
     .contact-form .input-box input {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 30px;
+    .navbar {
+        padding: 8px 4%;
+        height: 75px;
     }
+    
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
     .logo-wrapper {
         gap: 10px;
     }
+
+    /* Balanced mobile scaling for the profile logo component */
     .logo-anime-box {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
     }
+
     .logo-img {
-        width: 42px;
-        height: 42px;
+        width: 47px;
+        height: 47px;
+        border-width: 2px;
+        object-position: center 28%;
     }
+
     .logo {
-        font-size: 22px;
+        font-size: 20px;
     }
+    
+    .menu-btn {
+        font-size: 26px;
+    }
+
     .projects-container {
         grid-template-columns: 1fr;
     }
