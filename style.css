@@ -57,7 +57,6 @@ body {
     position: relative;
 }
 
-/* Navbar links style */
 .nav-links a {
     font-size: 18px;
     color: var(--text-color);
@@ -66,7 +65,6 @@ body {
     display: inline-block;
 }
 
-/* Premium bottom line setup */
 .nav-links li::after {
     content: '';
     position: absolute;
@@ -79,24 +77,22 @@ body {
     box-shadow: 0 0 10px var(--main-color);
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth jump/bounce */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Text hover state */
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--main-color);
     font-weight: 500;
-    text-shadow: 0 0 5px var(--main-color); /* Premium minimalist neon glow */
+    text-shadow: 0 0 5px var(--main-color);
 }
 
-/* Line jump trigger on hover & active status */
 .nav-links li:hover::after,
 .nav-links a.active + ::after,
 .nav-links a.active::after { 
     transform: scaleX(1);
     transform-origin: left;
-    bottom: 2px; /* Line jumps closer to the text */
+    bottom: 2px;
 }
 
 .menu-btn {
@@ -145,7 +141,7 @@ body {
     color: #b2c4d4;
 }
 
-/* --- Buttons (Uniform Glowing Look) --- */
+/* --- Buttons --- */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -383,12 +379,64 @@ body {
     box-shadow: 0 0 10px rgba(0, 171, 240, 0.3);
 }
 
-.contact-form .input-box input {
-    width: 48%;
+/* --- 📱 EXCLUSIVE FIXED RESPONSIVE MEDIA QUERIES 📱 --- */
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+    .hero-section,
+    .about-section,
+    .projects-section,
+    .contact-section {
+        padding: 80px 5%;
+    }
+    .hero-content h1 {
+        font-size: 45px;
+    }
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+    /* Mobile standard responsive layout fix */
+    .about-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+    .heading {
+        text-align: center;
+        font-size: 35px;
+    }
+    .hero-content h1 {
+        font-size: 38px;
+    }
+    .hero-content h3 {
+        font-size: 24px;
+    }
+    .about-img .img-box {
+        width: 220px;
+        height: 220px;
+        font-size: 80px;
+    }
+    .skills-badge {
+        justify-content: center;
+    }
     .contact-form .input-box input {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 }
