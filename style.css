@@ -376,7 +376,7 @@ body {
     width: 100%;
 }
 
-/* --- 🎯 FIXED COMPACT CONTACT SECTION (DESKTOP) --- */
+/* --- Contact Section (Laptop/Desktop Balanced Setup) --- */
 .contact-section {
     padding: 80px 10% 60px;
     min-height: calc(100vh - 80px);
@@ -425,7 +425,7 @@ body {
 }
 
 .contact-form textarea {
-    height: 150px; /* Locked compact height */
+    height: 150px; 
 }
 
 .contact-form .btn {
@@ -451,7 +451,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* ONLY FOR MOBILE: Scroll alignment activation */
+    /* SCROLL CORRECTION IN MOBILE VIEW */
     html {
         scroll-padding-top: 95px; 
     }
@@ -498,10 +498,10 @@ body {
         z-index: 101;
     }
 
-    /* Spacing adjustments for mobile headers */
+    /* 🎯 BALANCED MOBILE GAP: Spacing perfectly reduced from 140px to 95px */
     .hero-section {
         min-height: auto;
-        padding: 160px 5% 60px !important; 
+        padding: 140px 5% 60px !important; 
     }
 
     .about-section {
@@ -509,17 +509,17 @@ body {
         text-align: center;
         gap: 2rem;
         min-height: auto;
-        padding: 130px 5% 60px !important; 
+        padding: 95px 5% 60px !important; /* Elegant clean look */
     }
 
     .projects-section {
         min-height: auto;
-        padding: 130px 5% 60px !important; 
+        padding: 95px 5% 60px !important; /* Elegant clean look */
     }
 
     .contact-section {
         min-height: auto !important;
-        padding: 130px 5% 100px !important; 
+        padding: 95px 5% 100px !important; /* Elegant clean look */
         display: block !important;
         clear: both;
     }
