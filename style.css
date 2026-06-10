@@ -80,8 +80,8 @@ body {
     height: 55px;
     border-radius: 50%;
     object-fit: cover;   
-    object-position: center 28%; /* 🎯 HAIR CUT FIX: Baal katne se bachata hai aur face adjust karta hai */
-    transform: scale(1.1);       /* Perfectly balanced zoom inside ring */
+    object-position: center 28%; /* 🎯 HAIR CUT FIX: Baal katne se bachata hai */
+    transform: scale(1.1);       
     z-index: 1;
     border: 3px solid var(--bg-color); 
 }
@@ -147,7 +147,7 @@ body {
     font-size: 24px;
     color: var(--text-color);
     cursor: pointer;
-    display: none; /* Desktop par hidden rahega */
+    display: none; 
 }
 
 /* --- Hero Section --- */
@@ -439,15 +439,41 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 10px 5%; /* Tight padding to keep everything on one line */
+        padding: 10px 5%; 
         height: 80px;      
     }
     
+    /* 🎯 YAHAN GLTI THI - DROPDOWN KI STYLING ADD KI HAI AB CLICK PAR KAAM KAREGI */
     .nav-links {
-        display: none; /* Hide standard links on mobile */
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background: #081b29; /* Solid Dark Background */
+        border-bottom: 2px solid var(--main-color);
+        padding: 20px 0;
+        text-align: center;
+        z-index: 99;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+    }
+
+    /* JavaScript jab click par .active class lagaye ga toh dropdown khule ga */
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        display: block;
     }
     
-    /* 🎯 MOBILE HAMBURGER FIX: Shows the menu icon on standard mobile layouts */
     .menu-btn {
         display: block !important; 
         font-size: 28px;
@@ -519,6 +545,10 @@ body {
         padding: 8px 4%;
         height: 75px;
     }
+
+    .nav-links {
+        top: 75px;
+    }
     
     .hero-content h1 {
         font-size: 28px;
@@ -528,7 +558,6 @@ body {
         gap: 10px;
     }
 
-    /* Balanced mobile scaling for the profile logo component */
     .logo-anime-box {
         width: 55px;
         height: 55px;
