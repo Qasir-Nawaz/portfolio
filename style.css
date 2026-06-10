@@ -74,7 +74,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* --- Perfect Circle Image Fit & Face Alignment Fix --- */
+/* --- Perfect Circle Image Fit --- */
 .logo-img {
     width: 55px;         
     height: 55px;
@@ -451,9 +451,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* SCROLL CORRECTION IN MOBILE VIEW */
+    /* 🎯 PERFECT SCROLL OVERLAP BALANCE FOR MOBILE */
     html {
-        scroll-padding-top: 95px; 
+        scroll-padding-top: 75px; 
     }
 
     .navbar {
@@ -498,10 +498,10 @@ body {
         z-index: 101;
     }
 
-    /* 🎯 BALANCED MOBILE GAP: Spacing perfectly reduced from 140px to 95px */
+    /* 🎯 FIXING THE AWKWARD GAP FOR ALL THREE SECTIONS EQUALLY */
     .hero-section {
         min-height: auto;
-        padding: 140px 5% 60px !important; 
+        padding: 130px 5% 60px !important; 
     }
 
     .about-section {
@@ -509,17 +509,17 @@ body {
         text-align: center;
         gap: 2rem;
         min-height: auto;
-        padding: 95px 5% 60px !important; /* Elegant clean look */
+        padding: 75px 5% 60px !important; /* Fixed tight spacing */
     }
 
     .projects-section {
         min-height: auto;
-        padding: 95px 5% 60px !important; /* Elegant clean look */
+        padding: 75px 5% 60px !important; /* Fixed tight spacing */
     }
 
     .contact-section {
         min-height: auto !important;
-        padding: 95px 5% 100px !important; /* Elegant clean look */
+        padding: 75px 5% 100px !important; /* Fixed tight spacing */
         display: block !important;
         clear: both;
     }
