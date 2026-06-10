@@ -45,7 +45,7 @@ body {
     gap: 15px;
 }
 
-/* Cyber Neon rotating ring - NORMAL DECENT SIZE */
+/* Cyber Neon rotating ring */
 .logo-anime-box {
     position: relative;
     width: 65px;         
@@ -80,7 +80,7 @@ body {
     height: 55px;
     border-radius: 50%;
     object-fit: cover;   
-    object-position: center 28%; /* 🎯 HAIR CUT FIX: Baal katne se bachata hai */
+    object-position: center 28%; 
     transform: scale(1.1);       
     z-index: 1;
     border: 3px solid var(--bg-color); 
@@ -376,17 +376,21 @@ body {
     width: 100%;
 }
 
-/* --- Contact Section --- */
+/* --- 🎯 FIXED COMPACT CONTACT SECTION (DESKTOP) --- */
 .contact-section {
-    padding: 100px 10%;
-    min-height: 100vh;
+    padding: 80px 10% 60px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: var(--second-bg-color);
 }
 
 .contact-form {
     max-width: 600px;
-    margin: 4rem auto 0;
+    margin: 0 auto;
     text-align: center;
+    width: 100%;
 }
 
 .contact-form .input-box {
@@ -399,13 +403,13 @@ body {
 .contact-form .input-box input,
 .contact-form textarea {
     width: 100%;
-    padding: 1.5rem;
-    font-size: 16px;
+    padding: 1.2rem;
+    font-size: 15px;
     color: var(--text-color);
     background: var(--bg-color);
     border-radius: 10px;
     border: 2px solid rgba(0, 171, 240, 0.1);
-    margin: 0.8rem 0;
+    margin: 0.5rem 0;
     resize: none;
 }
 
@@ -418,6 +422,15 @@ body {
 
 .contact-form .input-box input {
     width: 48%;
+}
+
+.contact-form textarea {
+    height: 150px; /* Locked compact height */
+}
+
+.contact-form .btn {
+    margin-top: 1rem;
+    padding: 12px 35px;
 }
 
 /* --- 📱 FINAL FIXED RESPONSIVE MEDIA QUERIES 📱 --- */
@@ -438,12 +451,16 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* ONLY FOR MOBILE: Scroll alignment activation */
+    html {
+        scroll-padding-top: 95px; 
+    }
+
     .navbar {
         padding: 10px 5%; 
         height: 80px;      
     }
     
-    /* 🎯 YAHAN GLTI THI - DROPDOWN KI STYLING ADD KI HAI AB CLICK PAR KAAM KAREGI */
     .nav-links {
         display: none; 
         flex-direction: column;
@@ -451,7 +468,7 @@ body {
         top: 80px; 
         left: 0;
         width: 100%;
-        background: #081b29; /* Solid Dark Background */
+        background: #081b29; 
         border-bottom: 2px solid var(--main-color);
         padding: 20px 0;
         text-align: center;
@@ -459,7 +476,6 @@ body {
         box-shadow: 0 10px 15px rgba(0,0,0,0.4);
     }
 
-    /* JavaScript jab click par .active class lagaye ga toh dropdown khule ga */
     .nav-links.active {
         display: flex !important;
     }
@@ -482,9 +498,10 @@ body {
         z-index: 101;
     }
 
+    /* Spacing adjustments for mobile headers */
     .hero-section {
         min-height: auto;
-        padding: 140px 5% 60px; 
+        padding: 160px 5% 60px !important; 
     }
 
     .about-section {
@@ -492,17 +509,17 @@ body {
         text-align: center;
         gap: 2rem;
         min-height: auto;
-        padding: 60px 5%;
+        padding: 130px 5% 60px !important; 
     }
 
     .projects-section {
         min-height: auto;
-        padding: 60px 5%;
+        padding: 130px 5% 60px !important; 
     }
 
     .contact-section {
         min-height: auto !important;
-        padding: 60px 5% 100px !important;
+        padding: 130px 5% 100px !important; 
         display: block !important;
         clear: both;
     }
