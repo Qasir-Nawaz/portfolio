@@ -376,6 +376,78 @@ body {
     width: 100%;
 }
 
+/* 🎯 Updated Symmetric Grid for Certificates */
+/* --- Certificates Section Styling --- */
+.certificates-section {
+    padding: 100px 10%;
+    min-height: auto;
+    background: var(--bg-color);
+}
+
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.certificate-box {
+    background: var(--second-bg-color);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certificate-box:hover {
+    border-color: var(--neon-green); 
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.certificate-icon {
+    font-size: 50px;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.certificate-box h3 {
+    font-size: 22px;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Software House Style */
+.software-house {
+    font-size: 16px;
+    color: var(--main-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.certificate-box p {
+    font-size: 14px;
+    color: #b2c4d4;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.certificate-btn {
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+}
+
 /* --- Contact Section (Laptop/Desktop Balanced Setup) --- */
 .contact-section {
     padding: 80px 10% 60px;
@@ -442,6 +514,7 @@ body {
     .hero-section,
     .about-section,
     .projects-section,
+    .certificates-section,
     .contact-section {
         padding: 80px 5%;
     }
@@ -451,7 +524,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* 🎯 PERFECT SCROLL OVERLAP BALANCE FOR MOBILE */
     html {
         scroll-padding-top: 75px; 
     }
@@ -498,7 +570,6 @@ body {
         z-index: 101;
     }
 
-    /* 🎯 FIXING THE AWKWARD GAP FOR ALL THREE SECTIONS EQUALLY */
     .hero-section {
         min-height: auto;
         padding: 130px 5% 60px !important; 
@@ -509,17 +580,18 @@ body {
         text-align: center;
         gap: 2rem;
         min-height: auto;
-        padding: 75px 5% 60px !important; /* Fixed tight spacing */
+        padding: 75px 5% 60px !important; 
     }
 
-    .projects-section {
+    .projects-section,
+    .certificates-section {
         min-height: auto;
-        padding: 75px 5% 60px !important; /* Fixed tight spacing */
+        padding: 75px 5% 60px !important; 
     }
 
     .contact-section {
         min-height: auto !important;
-        padding: 75px 5% 100px !important; /* Fixed tight spacing */
+        padding: 75px 5% 100px !important; 
         display: block !important;
         clear: both;
     }
